@@ -4,6 +4,7 @@ import { ArticlePageComponent } from './pages/article-page/article-page.componen
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { CreateArticlePageComponent } from './pages/create-article-page/create-article-page.component';
 
 export const routes: Routes = [
   {
@@ -12,11 +13,11 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: '**',
-    component: NotFoundPageComponent
+    path: 'article/create',
+    component: CreateArticlePageComponent,
   },
   {
-    path: 'article/id',
+    path: 'article/:id',
     component: ArticlePageComponent,
   },
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
   },
   {
     path: 'signup',
-    component: SignupPageComponent
-  }
+    component: SignupPageComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
+  },
 ];
